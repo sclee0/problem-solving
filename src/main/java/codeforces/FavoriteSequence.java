@@ -1,26 +1,32 @@
 package codeforces;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class FavoriteSequence {
-    public static void main(String []args){
-        Scanner input = new Scanner(System.in);
+    public static void main(String []args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        final int n = input.nextInt();
+        int tc = Integer.parseInt(br.readLine());
 
-        for(int i=0;i<n;++i){
-            final int length = input.nextInt();
-            int a[] = new int[length];
-            for(int j=0;j<length;++j){
-                a[j] = input.nextInt();
+        for(int t=0;t<tc;++t){
+            br.readLine();
+            String[] nums = br.readLine().split(" ");
+            String ans = "";
+
+            int i=0, j= nums.length-1;
+            while(i<=j){
+                if(i==j){
+                    ans = ans+nums[i]+" ";
+                }
+                else{
+                    ans = ans+nums[i]+" "+nums[j]+" ";
+                }
+                i++;
+                j--;
             }
-
-            final int half = length/2;
-            for(int j=0;j<half;++j){
-                System.out.print(String.valueOf(a[j]) +" "+ String.valueOf(a[length-j-1])+" ");
-            }
-            if(length%2!=0)
-                System.out.println(String.valueOf(a[half]));
+            System.out.println(ans);
         }
     }
 }
