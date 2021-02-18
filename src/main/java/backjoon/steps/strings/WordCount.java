@@ -22,4 +22,5 @@ public class WordCount {
             System.out.println(len);
         }
     }
+
 }
