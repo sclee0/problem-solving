@@ -19,7 +19,6 @@ public class WordCount {
             }
         }
         else{
-
             System.out.println(len);
         }
     }
